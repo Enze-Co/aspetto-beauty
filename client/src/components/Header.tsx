@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { motion, AnimatePresence } from "framer-motion";
+import logoImage from "@assets/Original_Logo_1765655717627.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -14,51 +16,72 @@ export default function Header() {
   const [location] = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <motion.header 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border"
+    >
       <nav className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-4 h-16 md:h-20">
           <Link href="/" data-testid="link-home-logo">
-            <span className="font-serif text-2xl md:text-3xl font-semibold tracking-tight" style={{ color: '#08535d' }}>
-              Aspetto Beauty
-            </span>
+            <motion.img 
+              src={logoImage} 
+              alt="Aspetto Beauty" 
+              className="h-12 md:h-14 w-auto"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link, index) => (
+              <motion.div
                 key={link.href}
-                href={link.href}
-                data-testid={`link-nav-${link.label.toLowerCase()}`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <span
-                  className={`text-base font-medium transition-colors ${
-                    location === link.href
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                <Link
+                  href={link.href}
+                  data-testid={`link-nav-${link.label.toLowerCase()}`}
                 >
-                  {link.label}
-                </span>
-              </Link>
+                  <span
+                    className={`text-base font-medium transition-colors ${
+                      location === link.href
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              </motion.div>
             ))}
           </div>
 
           <div className="flex items-center gap-3">
-            <Button
-              asChild
-              className="hidden sm:flex rounded-full px-6"
-              style={{ backgroundColor: '#08535d' }}
-              data-testid="button-shop-amazon"
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <a
-                href="https://amazon.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                asChild
+                className="hidden sm:flex rounded-full px-6"
+                style={{ backgroundColor: '#08535d' }}
+                data-testid="button-shop-amazon"
               >
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Shop on Amazon
-              </a>
-            </Button>
+                <a
+                  href="https://amazon.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Shop on Amazon
+                </a>
+              </Button>
+            </motion.div>
 
             <Button
               size="icon"
@@ -72,46 +95,66 @@ export default function Header() {
           </div>
         </div>
 
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid={`link-mobile-nav-${link.label.toLowerCase()}`}
-                >
-                  <span
-                    className={`block py-2 px-4 rounded-md text-base font-medium transition-colors ${
-                      location === link.href
-                        ? "bg-accent text-foreground"
-                        : "text-muted-foreground"
-                    }`}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden py-4 border-t border-border overflow-hidden"
+            >
+              <div className="flex flex-col gap-2">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    {link.label}
-                  </span>
-                </Link>
-              ))}
-              <Button
-                asChild
-                className="mt-2 rounded-full"
-                style={{ backgroundColor: '#08535d' }}
-                data-testid="button-mobile-shop-amazon"
-              >
-                <a
-                  href="https://amazon.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      data-testid={`link-mobile-nav-${link.label.toLowerCase()}`}
+                    >
+                      <span
+                        className={`block py-2 px-4 rounded-md text-base font-medium transition-colors ${
+                          location === link.href
+                            ? "bg-accent text-foreground"
+                            : "text-muted-foreground"
+                        }`}
+                      >
+                        {link.label}
+                      </span>
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
                 >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Shop on Amazon
-                </a>
-              </Button>
-            </div>
-          </div>
-        )}
+                  <Button
+                    asChild
+                    className="mt-2 rounded-full"
+                    style={{ backgroundColor: '#08535d' }}
+                    data-testid="button-mobile-shop-amazon"
+                  >
+                    <a
+                      href="https://amazon.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ShoppingCart className="w-4 h-4 mr-2" />
+                      Shop on Amazon
+                    </a>
+                  </Button>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   );
 }

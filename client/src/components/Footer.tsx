@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import { Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import logoImage from "@assets/Original_Logo_1765655717627.png";
 
 const footerLinks = {
   shop: [
@@ -21,13 +23,21 @@ export default function Footer() {
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          <div className="lg:col-span-1">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-1"
+          >
             <Link href="/" data-testid="link-footer-logo">
-              <span className="font-serif text-2xl font-semibold" style={{ color: '#08535d' }}>
-                Aspetto Beauty
-              </span>
+              <img 
+                src={logoImage} 
+                alt="Aspetto Beauty" 
+                className="h-14 w-auto mb-4"
+              />
             </Link>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Natural, halal-certified skincare crafted with pure ingredients for radiant, healthy skin.
             </p>
             <div className="mt-6 flex flex-col gap-3">
@@ -44,9 +54,14 @@ export default function Footer() {
                 <span>United States</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h3 className="font-semibold text-foreground mb-4">Shop</h3>
             <ul className="space-y-3">
               {footerLinks.shop.map((link, index) => (
@@ -71,9 +86,14 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
@@ -86,9 +106,14 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <h3 className="font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link, index) => (
@@ -111,10 +136,16 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 pt-8 border-t border-border"
+        >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Aspetto Beauty. All rights reserved.
@@ -124,7 +155,7 @@ export default function Footer() {
               <span>Terms of Service</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

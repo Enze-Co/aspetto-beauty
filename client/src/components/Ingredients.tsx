@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 const ingredients = [
   {
@@ -30,37 +31,82 @@ const certifications = [
   { label: "Preservative-Free", color: "#988266" },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 export default function Ingredients() {
   return (
     <section className="py-16 md:py-20 lg:py-24" style={{ backgroundColor: '#daddd8' }}>
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold mb-4" style={{ color: '#604114' }}>
             Pure, Simple Ingredients
           </h2>
           <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#604114' }}>
             Every ingredient is carefully selected for its natural benefits. Nothing artificial, nothing harmful.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
           {certifications.map((cert, index) => (
-            <Badge
+            <motion.div
               key={index}
-              variant="secondary"
-              className="px-4 py-2 text-sm font-medium text-white"
-              style={{ backgroundColor: cert.color }}
-              data-testid={`badge-cert-${index}`}
+              whileHover={{ scale: 1.05, y: -2 }}
+              transition={{ duration: 0.2 }}
             >
-              {cert.label}
-            </Badge>
+              <Badge
+                variant="secondary"
+                className="px-4 py-2 text-sm font-medium text-white"
+                style={{ backgroundColor: cert.color }}
+                data-testid={`badge-cert-${index}`}
+              >
+                {cert.label}
+              </Badge>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+        >
           {ingredients.map((ingredient, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ duration: 0.3 }}
               className="bg-background rounded-xl p-6 shadow-md"
               data-testid={`card-ingredient-${index}`}
             >
@@ -75,11 +121,17 @@ export default function Ingredients() {
               <p className="text-muted-foreground">
                 {ingredient.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-12 md:mt-16 max-w-3xl mx-auto text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-12 md:mt-16 max-w-3xl mx-auto text-center"
+        >
           <div className="bg-background rounded-2xl p-6 md:p-8 shadow-md">
             <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4" style={{ color: '#604114' }}>
               Storage & Care
@@ -90,7 +142,7 @@ export default function Ingredients() {
               Patch test recommended before first use.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
