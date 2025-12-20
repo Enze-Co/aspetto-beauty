@@ -48,7 +48,7 @@ export default function Header() {
             <motion.img 
               src={"/logo.png"} 
               alt="Aspetto Beauty" 
-              className="h-12 md:h-16 w-auto" 
+              className="h-12 md:h-[75px] w-auto" 
               whileHover={{ scale: 1.02 }} 
               transition={{ duration: 0.2 }}
             />

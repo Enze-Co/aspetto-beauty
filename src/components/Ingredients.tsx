@@ -72,7 +72,7 @@ export default function Ingredients() {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-primary">
             Pure, Simple Ingredients
           </h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-primary">
+          <p className="text-lg md:text-xl mx-auto text-primary">
             Every ingredient is carefully selected for its natural benefits. Nothing artificial, nothing harmful.
           </p>
         </motion.div>

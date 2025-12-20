@@ -87,7 +87,7 @@ export default function Benefits() {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-primary">
             Why Choose Tallow?
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mx-auto">
             Discover the time-tested benefits of grass-fed tallow, nature's perfect moisturizer.
           </p>
         </motion.div>
