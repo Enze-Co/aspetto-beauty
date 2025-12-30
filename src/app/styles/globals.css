@@ -9,19 +9,17 @@
   --font-serif: var(--font-playfair);
   
   /* Brand Colors - Primary */
-  --color-primary: #604114;           /* Brown/tan - main text color */
-  --color-primary-dark: #08535d;      /* Dark teal - buttons, badges, primary actions */
-  --color-primary-medium: #248b97;    /* Medium teal - icons, accents */
-  --color-primary-light: #6ec5c6;     /* Light teal - backgrounds, icons */
+  --color-primary: #604013;           /* Brown/tan - main text color */
+  --color-primary-dark: #04515B;      /* Dark teal - buttons, badges, primary actions */
+  --color-primary-medium: #1B8996;    /* Medium teal - icons, accents */
+  --color-primary-light: #63C6C7;     /* Light teal - backgrounds, icons */
   
   /* Brand Colors - Secondary */
-  --color-secondary: #fabdbd;         /* Light pink - backgrounds, buttons */
-  --color-secondary-alt: #ed8986;      /* Coral/salmon - backgrounds */
-  --color-accent: #f26565;             /* Red/pink - icons, highlights */
+  --color-secondary: #F26464;         /* Light pink - backgrounds, buttons */
   
   /* Neutral Colors */
   --color-neutral: #daddd8;            /* Light gray/green - backgrounds, text */
-  --color-neutral-dark: #988266;       /* Brown/tan - accents */
+  --color-neutral-dark: #604013;       /* Brown/tan - accents */
 }
 
 body {

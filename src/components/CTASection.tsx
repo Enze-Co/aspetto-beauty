@@ -82,7 +82,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-neutral"
+          className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-neutral"
         >
           Join thousands who have discovered the natural power of tallow skincare.
           Experience the difference pure, organic ingredients can make.

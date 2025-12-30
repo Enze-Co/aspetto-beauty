@@ -29,7 +29,7 @@ const productFeatures = [
   "For face and body",
   "Light, absorbable formula",
   "Does not clog pores",
-  "For all skin types",
+  "For all ages and skin types",
 ];
 
 const vitamins = [
@@ -58,19 +58,28 @@ const vitamins = [
 const faqs = [
   {
     question: "What skin types is this suitable for?",
-    answer: "Our tallow moisturizer is suitable for all skin types including dry, oily, combination, and sensitive skin. The natural formula is gentle yet effective.",
+    answer:
+      "Our tallow moisturizer is suitable for all ages and skin types including dry, oily, combination, and sensitive skin. The natural formula is gentle yet effective.",
   },
   {
     question: "Is this product scented?",
-    answer: "No, our moisturizer is unscented. It's infused with natural herbs (rose and calendula) but contains no added fragrances or essential oils.",
+    answer:
+      "No, our moisturizer is unscented. It's infused with natural herbs (rose and calendula) but contains no added fragrances or essential oils.",
   },
   {
     question: "How should I store this product?",
-    answer: "Store at room temperature. Natural color and texture changes are normal due to the preservative-free formula. Use within one year of purchase.",
+    answer:
+      "Store at room temperature. Natural color and texture changes are normal due to the preservative-free formula. Use within one year of purchase.",
   },
   {
     question: "Is a patch test recommended?",
-    answer: "Yes, we recommend doing a patch test before first use, especially if you have sensitive skin or known allergies.",
+    answer:
+      "Yes, we recommend doing a patch test before first use, especially if you have sensitive skin or known allergies.",
+  },
+  {
+    question: "Where is this product made?",
+    answer:
+      "Our tallow moisturizer is formulated and manufactured in the United States in small batches to ensure quality and consistency.",
   },
 ];
 
@@ -188,8 +197,7 @@ export default function Product() {
                   transition={{ duration: 0.7, delay: 0.4 }}
                   className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
                 >
-                  A pure, preservative-free remedy crafted from grass-fed tallow and organic botanicals. Deeply hydrates and soothes skin naturally. Net wt 1.7 oz.
-                </motion.p>
+                  A pure, preservative-free remedy crafted from grass-fed tallow and organic botanicals. Deeply hydrates and soothes skin naturally. Formulated and manufactured in the USA. Net wt 1.7 oz.                </motion.p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -353,8 +361,7 @@ export default function Product() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full px-10 py-7 text-lg font-semibold"
-                style={{ backgroundColor: '#fabdbd', color: '#604114' }}
+                className="rounded-full px-10 py-7 text-lg font-semibold bg-secondary"
                 data-testid="button-product-cta"
                 aria-label="Shop Aspetto Beauty products on Amazon - Opens in new tab"
               >

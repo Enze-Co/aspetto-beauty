@@ -25,7 +25,7 @@ const badges = [
     icon: Heart,
     title: "Cruelty Free",
     subtitle: "Never Tested on Animals",
-    color: "accent",
+    color: "secondary",
   },
 ];
 

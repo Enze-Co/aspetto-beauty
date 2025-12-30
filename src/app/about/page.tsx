@@ -29,7 +29,7 @@ const values = [
     icon: Heart,
     title: "Organic",
     description: "USDA Organic certified ingredients. From the sweet almond oil to the rose and calendula, every botanical is organically grown.",
-    color: "accent",
+    color: "secondary",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function About() {
               <h2 className="mb-4">
                 Our Values
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Every product we create is guided by three core principles.
               </p>
             </motion.div>
@@ -197,7 +197,7 @@ export default function About() {
               <h2 className="mb-4">
                 How We Make It
               </h2>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto text-primary">
+              <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary">
                 From farm to jar, every step is handled with care and intention.
               </p>
             </motion.div>

@@ -17,9 +17,8 @@ export default function ProductShowcase() {
           >
             Our Signature Product
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Handcrafted with care, our tallow moisturizer brings ancient skincare
-            wisdom to your daily routine.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Handcrafted with care, our tallow moisturizer brings ancient skincare wisdom to your daily routine—expertly formulated and manufactured in the USA.
           </p>
         </motion.div>
       </div>
