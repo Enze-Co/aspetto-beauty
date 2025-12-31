@@ -12,9 +12,9 @@ const footerLinks = {
   company: [
     { label: "About Us", href: "/about" },
   ],
-  support: [
-    { label: "Contact Us", href: "mailto:contact@aspettobeauty.com" },
-  ],
+  // support: [
+  //   { label: "Contact Us", href: "mailto:contact@aspettobeauty.com" },
+  // ],
 };
 
 export default function Footer() {
@@ -42,7 +42,7 @@ export default function Footer() {
               Natural, halal-certified skincare crafted with pure ingredients for radiant, healthy skin.
             </p>
             <div className="mt-6 flex flex-col gap-3">
-              <Link
+              {/* <Link
                 href="mailto:contact@aspettobeauty.com"
                 className="flex items-center gap-2  hover:text-foreground transition-colors"
                 data-testid="link-footer-email"
@@ -50,7 +50,7 @@ export default function Footer() {
               >
                 <Mail className="w-4 h-4" aria-hidden="true" />
                 <span>contact@aspettobeauty.com</span>
-              </Link>
+              </Link> */}
               <div className="flex items-center gap-2 " aria-label="Location">
                 <MapPin className="w-4 h-4" aria-hidden="true" />
                 <span>United States</span>
