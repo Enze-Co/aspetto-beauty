@@ -147,8 +147,9 @@ export default function Footer() {
               </ul>
             </nav>
           </motion.div>
-        </div>
 */}
+                  </div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
