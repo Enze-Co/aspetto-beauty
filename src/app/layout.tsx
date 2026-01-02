@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./styles/globals.css";
+import { StructuredData, generateOrganizationSchema } from "@/src/components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,11 +85,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aspettobeauty.com';
+  const organizationSchema = generateOrganizationSchema(baseUrl);
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
+        <StructuredData type="organization" data={organizationSchema} />
         {children}
       </body>
     </html>

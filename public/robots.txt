@@ -1,0 +1,32 @@
+# robots.txt for Aspetto Beauty
+# https://aspettobeauty.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any exist in the future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+# Note: Next.js can generate sitemap.xml automatically
+# Update this URL once your sitemap is live
+Sitemap: https://aspettobeauty.com/sitemap.xml
+
+# Crawl-delay (optional - remove if not needed)
+# Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+

@@ -16,6 +16,7 @@ import {
 } from "@/src/components/ui/accordion";
 import Image from "next/image";
 import Link from "next/link";
+import { StructuredData, generateProductSchema, generateBreadcrumbSchema } from "@/src/components/StructuredData";
 
 const productImages = [
   "/product-1.png",
@@ -99,9 +100,17 @@ const badgeBgMap: Record<string, string> = {
 
 export default function Product() {
   const [selectedImage, setSelectedImage] = useState(0);
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aspettobeauty.com';
+  const productSchema = generateProductSchema(baseUrl);
+  const breadcrumbSchema = generateBreadcrumbSchema(baseUrl, [
+    { name: "Home", url: baseUrl },
+    { name: "Product", url: `${baseUrl}/product` },
+  ]);
 
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData type="product" data={productSchema} />
+      <StructuredData type="breadcrumb" data={breadcrumbSchema} />
       <Header />
       <main>
         <section className="py-12 md:py-16 lg:py-20" aria-label="Product details">
@@ -197,7 +206,8 @@ export default function Product() {
                   transition={{ duration: 0.7, delay: 0.4 }}
                   className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
                 >
-                  A pure, preservative-free remedy crafted from grass-fed tallow and organic botanicals. Deeply hydrates and soothes skin naturally. Formulated and manufactured in the USA. Net wt 1.7 oz.                </motion.p>
+                  A pure, preservative-free remedy crafted from grass-fed tallow and organic botanicals. Deeply hydrates and soothes skin naturally. Formulated and manufactured in the USA. Net wt 1.7 oz. <Link href="/about" className="text-primary hover:underline transition-colors">Learn about our story</Link>.
+                </motion.p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}

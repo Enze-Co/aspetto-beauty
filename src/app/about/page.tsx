@@ -7,6 +7,7 @@ import { Card } from "@/src/components/ui/card";
 import { ShoppingCart, Leaf, Heart, Shield, Flower2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { StructuredData, generateBreadcrumbSchema } from "@/src/components/StructuredData";
 
 
 // Note: Metadata export doesn't work with "use client" components
@@ -76,8 +77,15 @@ const itemVariants = {
 };
 
 export default function About() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aspettobeauty.com';
+  const breadcrumbSchema = generateBreadcrumbSchema(baseUrl, [
+    { name: "Home", url: baseUrl },
+    { name: "About Us", url: `${baseUrl}/about` },
+  ]);
+
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData type="breadcrumb" data={breadcrumbSchema} />
       <Header />
       <main>
         <section 
@@ -132,7 +140,7 @@ export default function About() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="text-lg md:text-xl leading-relaxed mb-8 w-full mx-auto"
             >
-              Aspetto Beauty was born from a simple belief: that skincare should be pure, ethical, and effective. We combine ancient wisdom with modern standards to create products that truly nourish your skin.
+              Aspetto Beauty was born from a simple belief: that skincare should be pure, ethical, and effective. We combine ancient wisdom with modern standards to create products that truly nourish your skin. <Link href="/product" className="underline hover:text-primary-light transition-colors">Discover our signature product</Link>.
             </motion.p>
           </div>
         </section>
@@ -298,7 +306,7 @@ export default function About() {
                 >
                   Combined with our organic botanical infusion of rose and calendula, our moisturizer
                   provides deep, lasting hydration while supporting your skin's natural healing processes.
-                  It's skincare the way nature intended.
+                  It's skincare the way nature intended. <Link href="/product" className="underline hover:text-primary-light transition-colors">Learn more about our product</Link>.
                 </motion.p>
               </div>
             </motion.div>

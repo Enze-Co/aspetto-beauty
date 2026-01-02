@@ -2,6 +2,7 @@
 import { Card } from "@/src/components/ui/card";
 import { Droplets, Shield, Sun, Heart, Leaf, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const benefits = [
   {
@@ -88,7 +89,7 @@ export default function Benefits() {
             Why Choose Tallow?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mx-auto">
-            Discover the time-tested benefits of grass-fed tallow, nature's perfect moisturizer.
+            Discover the time-tested benefits of grass-fed tallow, nature's perfect moisturizer. <Link href="/product" className="text-primary hover:underline transition-colors">Shop our product</Link>.
           </p>
         </motion.div>
 

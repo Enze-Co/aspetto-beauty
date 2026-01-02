@@ -7,6 +7,7 @@ import Benefits from "@/src/components/Benefits";
 import Ingredients from "@/src/components/Ingredients";
 import CTASection from "@/src/components/CTASection";
 import Footer from "@/src/components/Footer";
+import { StructuredData, generateProductSchema } from "@/src/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Aspetto Beauty - Natural Halal Skincare",
@@ -32,8 +33,12 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aspettobeauty.com';
+  const productSchema = generateProductSchema(baseUrl);
+
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData type="product" data={productSchema} />
       <Header />
       <main>
         <Hero />
