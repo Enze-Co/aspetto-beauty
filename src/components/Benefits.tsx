@@ -27,7 +27,7 @@ const benefits = [
     icon: Heart,
     title: "For All Ages and Skin Types",
     description: "Gentle enough for sensitive skin, effective for dry, oily, or combination skin types.",
-    color: "secondary-alt",
+    color: "neutral",
   },
   {
     icon: Leaf,
@@ -68,8 +68,8 @@ const cardVariants = {
 const colorMap = {
   "primary-light": "bg-primary-light/20 text-primary-light",
   "primary-dark": "bg-primary-dark/20 text-primary-dark",
-  "accent": "bg-secondary/20 text-accent",
-  "secondary-alt": "bg-secondary-alt/20 text-secondary-alt",
+  "accent": "bg-secondary/20",
+  "neutral": "bg-neutral text-neutral-dark",
   "primary-medium": "bg-primary-medium/20 text-primary-medium",
   "neutral-dark": "bg-neutral-dark/20 text-neutral-dark",
 };

@@ -51,6 +51,13 @@ const badgeVariants = {
   },
 };
 
+const colorMap = {
+  "primary-dark": "bg-primary-dark/20 text-primary-dark",
+  "primary-medium": "bg-primary-medium/20 text-primary-medium",
+  "primary-light": "bg-primary-light/20 text-primary-light",
+  "secondary": "bg-secondary/20 text-secondary-dark",
+};
+
 export default function TrustBadges() {
   return (
     <section className="py-12 md:py-16 bg-white border-y border-border" aria-label="Trust badges and certifications">
@@ -70,10 +77,10 @@ export default function TrustBadges() {
               data-testid={`trust-badge-${index}`}
             >
               <div
-                className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-3 bg-${badge.color}/20`}
+                className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-3 ${colorMap[badge.color as keyof typeof colorMap]?.split(' ')[0]}`}
                 aria-hidden="true"
               >
-                <badge.icon className={`w-8 h-8 md:w-10 md:h-10 text-${badge.color}`} aria-hidden="true" />
+                <badge.icon className={`w-8 h-8 md:w-10 md:h-10 ${colorMap[badge.color as keyof typeof colorMap]?.split(' ')[1]}`} aria-hidden="true" />
               </div>
               <h2 className="h4 font-semibold text-sm md:text-base text-primary">
                 {badge.title}

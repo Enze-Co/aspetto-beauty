@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center bg-secondary/20" aria-label="Hero section">
+    <section className="relative flex items-center bg-secondary" aria-label="Hero section">
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/70 to-neutral/50" aria-hidden="true" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24 w-full">

@@ -15,7 +15,8 @@
   --color-primary-light: #63C6C7;     /* Light teal - backgrounds, icons */
   
   /* Brand Colors - Secondary */
-  --color-secondary: #F26464;         /* Light pink - backgrounds, buttons */
+  --color-secondary: #fabdbd;      /* Light pink - backgrounds, buttons */
+  --color-secondary-dark: #f26464;    /* Dark pink - backgrounds, buttons */
   
   /* Neutral Colors */
   --color-neutral: #daddd8;            /* Light gray/green - backgrounds, text */

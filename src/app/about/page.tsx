@@ -76,6 +76,12 @@ const itemVariants = {
   },
 };
 
+const colorMap = {
+  "primary-medium": "bg-primary-medium/20 text-primary-medium",
+  "primary-dark": "bg-primary-dark/20 text-primary-dark",
+  "secondary": "bg-secondary/20 text-secondary-dark",
+};
+
 export default function About() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aspettobeauty.com';
   const breadcrumbSchema = generateBreadcrumbSchema(baseUrl, [
@@ -175,10 +181,10 @@ export default function About() {
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 10 }}
                       transition={{ duration: 0.3 }}
-                      className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-${value.color}/20`}
+                      className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${colorMap[value.color as keyof typeof colorMap]?.split(' ')[0]}`}
                       aria-hidden="true"
                     >
-                      <value.icon className={`w-8 h-8 text-${value.color}`} aria-hidden="true" />
+                      <value.icon className={`w-8 h-8 ${colorMap[value.color as keyof typeof colorMap]?.split(' ')[1]}`} aria-hidden="true" />
                     </motion.div>
                     <h3 className="mb-4">
                       {value.title}
