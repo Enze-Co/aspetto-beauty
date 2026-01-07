@@ -37,12 +37,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.png", sizes: "any" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
       { url: "/icon.png", sizes: "180x180", type: "image/png" },
     ],
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     type: "website",
@@ -53,7 +57,7 @@ export const metadata: Metadata = {
     description: "Experience the ancient wisdom of grass-fed tallow, enriched with vitamins A, D, E, K and organic botanicals. Pure, halal-certified skincare for radiant, healthy skin.",
     images: [
       {
-        url: "/logo.png",
+        url: "/about-aspetto.webp",
         width: 1200,
         height: 630,
         alt: "Aspetto Beauty - Natural Halal Skincare",
@@ -64,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aspetto Beauty - Natural Halal Skincare",
     description: "Experience the ancient wisdom of grass-fed tallow, enriched with vitamins A, D, E, K and organic botanicals. Pure, halal-certified skincare for radiant, healthy skin.",
-    images: ["/logo.png"],
+    images: ["/about-aspetto.webp"],
     creator: "@aspettobeauty",
   },
   robots: {

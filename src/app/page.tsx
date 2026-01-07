@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     description: "Discover Aspetto Beauty's natural, halal-certified tallow moisturizer. Enriched with vitamins A, D, E, K and organic botanicals for radiant, healthy skin.",
     images: [
       {
-        url: "/hero-product.png",
+        url: "/about-aspetto.webp",
         width: 1200,
         height: 630,
-        alt: "Aspetto Beauty Whipped Tallow Cream",
+        alt: "Aspetto Beauty - Natural Halal Skincare",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aspetto Beauty - Natural Halal Skincare",
     description: "Discover Aspetto Beauty's natural, halal-certified tallow moisturizer. Enriched with vitamins A, D, E, K and organic botanicals for radiant, healthy skin.",
-    images: ["/hero-product.png"],
+    images: ["/about-aspetto.webp"],
   },
 };
 

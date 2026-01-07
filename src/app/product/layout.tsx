@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     description: "Natural, halal-certified tallow moisturizer enriched with vitamins A, D, E, K and organic botanicals. Perfect for all ages and skin types. Shop now on Amazon.",
     images: [
       {
-        url: "/product-1.png",
+        url: "/about-aspetto.webp",
         width: 1200,
         height: 630,
-        alt: "Aspetto Beauty Whipped Tallow Cream",
+        alt: "Aspetto Beauty - Natural Halal Skincare",
       },
     ],
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Whipped Tallow Cream | Aspetto Beauty",
     description: "Natural, halal-certified tallow moisturizer enriched with vitamins A, D, E, K and organic botanicals. Perfect for all ages and skin types.",
-    images: ["/product-1.png"],
+    images: ["/about-aspetto.webp"],
   },
 };
 
